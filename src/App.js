@@ -7,6 +7,7 @@ import About from './components/About';
 import Contact from './components/Contact';
 import Questions from './components/Questions';
 import './App.css';
+import FeedBack from './components/FeedBack';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/questions" element={<Questions />} />
+          <Route path="/feedback" element={<FeedBack />} />
         </Routes>
       </div>
   );

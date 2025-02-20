@@ -25,7 +25,8 @@ const Form = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("YOUR_API_ENDPOINT", formData);
+    //   const response = await axios.post("YOUR_API_ENDPOINT", formData);
+    const response = { data: formData };
       setSubmittedData(response.data);
       navigate("/questions", { state: { apiResponse: response.data } });
     } catch (error) {

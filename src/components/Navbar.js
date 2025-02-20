@@ -15,10 +15,10 @@ const Navbar = () => {
         </li>
         <li>
           <Link
-            to="/form"
+            to="/feedback"
             className="text-white font-semibold hover:text-blue-400 transition-colors"
           >
-            Form
+            Feedback
           </Link>
         </li>
         <li>
