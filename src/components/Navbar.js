@@ -31,7 +31,7 @@ const Navbar = () => {
         </li>
         <li>
           <Link
-            to="/questions"
+            to="/questionall"
             className="text-white font-semibold hover:text-blue-400 transition-colors"
           >
             Questions

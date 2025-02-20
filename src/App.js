@@ -8,6 +8,7 @@ import Contact from './components/Contact';
 import Questions from './components/Questions';
 import './App.css';
 import FeedBack from './components/FeedBack';
+import QuestionAll from './components/QuestionAll';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/questions" element={<Questions />} />
           <Route path="/feedback" element={<FeedBack />} />
+          <Route path="/questionall" element={<QuestionAll />} />
         </Routes>
       </div>
   );
