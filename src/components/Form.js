@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import backgroundImage from "/Users/rishi.airan/Desktop/interviewer-frontend/my-react-app/src/assets/canva-1.png";
+import backgroundImage from "../assets/canva-1.png";
 
 const Form = () => {
   const [formData, setFormData] = useState({

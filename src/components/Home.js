@@ -1,9 +1,9 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import sampleImage from "/Users/rishi.airan/Desktop/interviewer-frontend/my-react-app/src/assets/home-clr.png";
-import backgroundImage from "/Users/rishi.airan/Desktop/interviewer-frontend/my-react-app/src/assets/canva-1.png";
-import backgroundImage2 from "/Users/rishi.airan/Desktop/interviewer-frontend/my-react-app/src/assets/main-2.png";
-import maxProd from "/Users/rishi.airan/Desktop/interviewer-frontend/my-react-app/src/assets/max-prod.png";
+import sampleImage from "../assets/home-clr.png";
+import backgroundImage from "../assets/canva-1.png";
+import backgroundImage2 from "../assets/main-2.png";
+import maxProd from "../assets/max-prod.png";
 
 const Home = () => {
   const navigate = useNavigate();
