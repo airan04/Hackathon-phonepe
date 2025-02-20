@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
+import emailjs from 'emailjs-com';
 
 const FeedBack = () => {
   const [formData, setFormData] = useState({
     interviewerName: '',
     candidateName: '',
+    interviewerEmail: '',
+    candidateEmail: '',
     technicalSkills: '',
     communicationSkills: '',
     problemSolving: '',
@@ -11,7 +14,6 @@ const FeedBack = () => {
     additionalComments: '',
   });
 
-  // Handle form field changes
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({
@@ -20,15 +22,44 @@ const FeedBack = () => {
     });
   };
 
+  const sendEmail = async () => {
+    try {
+      const result = await emailjs.send(
+        process.env.REACT_APP_EMAILJS_SERVICE_ID, 
+        process.env.REACT_APP_EMAILJS_TEMPLATE_ID, 
+        formData,
+        process.env.REACT_APP_EMAILJS_USER_ID 
+      );
+      console.log('Feedback sent successfully:', result.text);
+    } catch (error) {
+      console.error('Error sending email:', error);
+    }
+  };
+
   // Handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Form Data:', formData);
-    // You can submit the form data to your server here or process it as needed.
-    alert('Feedback Submitted!');
+
+    // Send feedback to the interviewer's email
+    sendEmail();
+
+    // Send a thank you email to the candidate
+    emailjs.send(
+      process.env.REACT_APP_EMAILJS_SERVICE_ID,
+      process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+      {
+        ...formData,
+        to_email: formData.candidateEmail,
+      },
+      process.env.REACT_APP_EMAILJS_USER_ID
+    );
+
+    alert('Feedback submitted and email sent to both interviewer and candidate!');
     setFormData({
       interviewerName: '',
       candidateName: '',
+      interviewerEmail: '',
+      candidateEmail: '',
       technicalSkills: '',
       communicationSkills: '',
       problemSolving: '',
@@ -43,7 +74,7 @@ const FeedBack = () => {
         onSubmit={handleSubmit}
         className="bg-white p-8 rounded-lg shadow-md w-full sm:w-1/2 lg:w-1/3"
       >
-        <h2 className="text-2xl font-semibold mb-6 text-center">Interview Feedback</h2>
+        <h2 className="text-2xl font-semibold mb-6 text-center text-blue-600">Interview Feedback</h2>
 
         <div className="mb-4">
           <label
@@ -58,7 +89,7 @@ const FeedBack = () => {
             name="interviewerName"
             value={formData.interviewerName}
             onChange={handleChange}
-            className="w-full border border-gray-300 rounded-md p-2"
+            className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
             required
           />
         </div>
@@ -76,7 +107,43 @@ const FeedBack = () => {
             name="candidateName"
             value={formData.candidateName}
             onChange={handleChange}
-            className="w-full border border-gray-300 rounded-md p-2"
+            className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            required
+          />
+        </div>
+
+        <div className="mb-4">
+          <label
+            htmlFor="interviewerEmail"
+            className="block text-gray-700 font-bold mb-2"
+          >
+            Interviewer's Email:
+          </label>
+          <input
+            type="email"
+            id="interviewerEmail"
+            name="interviewerEmail"
+            value={formData.interviewerEmail}
+            onChange={handleChange}
+            className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            required
+          />
+        </div>
+
+        <div className="mb-4">
+          <label
+            htmlFor="candidateEmail"
+            className="block text-gray-700 font-bold mb-2"
+          >
+            Candidate's Email:
+          </label>
+          <input
+            type="email"
+            id="candidateEmail"
+            name="candidateEmail"
+            value={formData.candidateEmail}
+            onChange={handleChange}
+            className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
             required
           />
         </div>
@@ -94,7 +161,7 @@ const FeedBack = () => {
             name="technicalSkills"
             value={formData.technicalSkills}
             onChange={handleChange}
-            className="w-full border border-gray-300 rounded-md p-2"
+            className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
             min="1"
             max="5"
             required
@@ -114,7 +181,7 @@ const FeedBack = () => {
             name="communicationSkills"
             value={formData.communicationSkills}
             onChange={handleChange}
-            className="w-full border border-gray-300 rounded-md p-2"
+            className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
             min="1"
             max="5"
             required
@@ -134,7 +201,7 @@ const FeedBack = () => {
             name="problemSolving"
             value={formData.problemSolving}
             onChange={handleChange}
-            className="w-full border border-gray-300 rounded-md p-2"
+            className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
             min="1"
             max="5"
             required
@@ -154,7 +221,7 @@ const FeedBack = () => {
             name="overallExperience"
             value={formData.overallExperience}
             onChange={handleChange}
-            className="w-full border border-gray-300 rounded-md p-2"
+            className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
             min="1"
             max="5"
             required
@@ -173,14 +240,14 @@ const FeedBack = () => {
             name="additionalComments"
             value={formData.additionalComments}
             onChange={handleChange}
-            className="w-full border border-gray-300 rounded-md p-2"
+            className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
             rows="4"
           ></textarea>
         </div>
 
         <button
           type="submit"
-          className="w-full bg-blue-500 text-white font-bold py-2 px-4 rounded-md hover:bg-blue-700"
+          className="w-full bg-blue-500 text-white font-bold py-2 px-4 rounded-md hover:bg-blue-700 transition duration-300"
         >
           Submit Feedback
         </button>

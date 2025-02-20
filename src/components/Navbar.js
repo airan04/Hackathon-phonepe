@@ -31,10 +31,10 @@ const Navbar = () => {
         </li>
         <li>
           <Link
-            to="/contact"
+            to="/questions"
             className="text-white font-semibold hover:text-blue-400 transition-colors"
           >
-            Contact
+            Questions
           </Link>
         </li>
       </ul>

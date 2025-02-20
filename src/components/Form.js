@@ -24,9 +24,24 @@ const Form = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const apiData = {
+      question: {
+        questionText: "What is dependency injection?",
+        category: formData.department,
+        link: "https://example.com/question1",
+        difficulty: formData.difficulty
+      },
+      jobType: formData.role,
+      department: formData.department,
+      experienceLevel: formData.experience
+    };
+
     try {
-    //   const response = await axios.post("YOUR_API_ENDPOINT", formData);
-    const response = { data: formData };
+      const response = await axios.get("https://hackathon-1-g3fc.onrender.com/api/questions/all", apiData, {
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      });
       setSubmittedData(response.data);
       navigate("/questions", { state: { apiResponse: response.data } });
     } catch (error) {

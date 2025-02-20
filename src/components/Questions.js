@@ -10,9 +10,15 @@ const Questions = () => {
       {apiResponse ? (
         <div className="bg-white p-6 rounded-lg shadow-md">
           <h2 className="text-2xl font-bold mb-4">API Response</h2>
-          <pre className="bg-gray-100 p-4 rounded-lg">
-            {JSON.stringify(apiResponse, null, 2)}
-          </pre>
+          <h3>{apiResponse.questionText}</h3>
+          <a
+            href={apiResponse.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-500 hover:underline"
+          >
+            {apiResponse.link}
+          </a>
         </div>
       ) : (
         <p>No data available.</p>
