@@ -37,7 +37,7 @@ const Form = () => {
     };
 
     try {
-      const response = await axios.get("https://hackathon-1-g3fc.onrender.com/api/questions/all", apiData, {
+      const response = await axios.post("https://hackathon-1-g3fc.onrender.com/api/questions/create", apiData, {
         headers: {
           'Content-Type': 'application/json'
         }
