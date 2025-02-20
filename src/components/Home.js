@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import sampleImage from "../assets/home-clr.png";
+import sampleImage from "../assets/home-image.png";
 import backgroundImage from "../assets/canva-1.png";
 import backgroundImage2 from "../assets/main-2.png";
 import maxProd from "../assets/max-prod.png";
@@ -40,7 +40,7 @@ const Home = () => {
             <img
               src={sampleImage}
               alt="heelooo"
-              className="rounded-lg border-4 border-gray-500 shadow-md"
+              className="rounded-lg"
             />
           </div>
         </div>

@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
 import backgroundImage from "../assets/canva-1.png";
 
 const Form = () => {
@@ -10,6 +12,7 @@ const Form = () => {
   });
 
   const [submittedData, setSubmittedData] = useState(null);
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -19,10 +22,15 @@ const Form = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSubmittedData(formData);
-    console.log(formData);
+    try {
+      const response = await axios.post("YOUR_API_ENDPOINT", formData);
+      setSubmittedData(response.data);
+      navigate("/questions", { state: { apiResponse: response.data } });
+    } catch (error) {
+      console.error("Error submitting form data:", error);
+    }
   };
 
   const handleReset = () => {
