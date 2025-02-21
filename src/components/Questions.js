@@ -24,7 +24,7 @@ const Questions = () => {
           {apiResponse && apiResponse.length > 0 ? (
             <div className="bg-white p-6 rounded-lg shadow-xl">
             <h2 className="text-3xl font-bold mb-6 text-center text-blue-600">
-              API Response
+              Questions
             </h2>
           
             {/* Grid of Questions */}
