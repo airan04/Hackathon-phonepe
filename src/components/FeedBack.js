@@ -25,10 +25,10 @@ const FeedBack = () => {
   const sendEmail = async () => {
     try {
       const result = await emailjs.send(
-        process.env.REACT_APP_EMAILJS_SERVICE_ID, 
-        process.env.REACT_APP_EMAILJS_TEMPLATE_ID, 
+        'service_njnfz8g', 
+        'template_9ogbecz', 
         formData,
-        process.env.REACT_APP_EMAILJS_USER_ID 
+        '6c33jm8uGtqJFt4iK' 
       );
       console.log('Feedback sent successfully:', result.text);
     } catch (error) {
@@ -45,13 +45,13 @@ const FeedBack = () => {
 
     // Send a thank you email to the candidate
     emailjs.send(
-      process.env.REACT_APP_EMAILJS_SERVICE_ID,
-      process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+      'service_njnfz8g',
+      'template_9ogbecz',
       {
         ...formData,
         to_email: formData.candidateEmail,
       },
-      process.env.REACT_APP_EMAILJS_USER_ID
+      '6c33jm8uGtqJFt4iK'
     );
 
     alert('Feedback submitted and email sent to both interviewer and candidate!');
