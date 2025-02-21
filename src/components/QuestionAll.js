@@ -38,7 +38,7 @@ const QuestionAll = () => {
         </div>
       ) : (
         <>
-          <div className="mb-4">
+          <div className="mb-4 w-[10%]">
             <label htmlFor="difficulty" className="block text-gray-700 font-bold mb-2">
               Filter by Difficulty:
             </label>
@@ -61,7 +61,7 @@ const QuestionAll = () => {
                 {filteredQuestions.map((question, index) => (
                   <div key={index} className="bg-gray-100 p-4 rounded-lg shadow hover:shadow-lg transition-shadow duration-300">
                     <h3 className="text-lg font-semibold mb-2">{index + 1}. {question.questionText}</h3>
-                    <p className="text-sm text-gray-600 mb-2">Difficulty: {question.difficulty}</p>
+                    {question.difficulty  && (<p className="text-sm text-gray-600 mb-2">Difficulty: {question.difficulty}</p>)}
                     <a
                       href={question.link}
                       target="_blank"
