@@ -16,36 +16,38 @@ const Home = () => {
   return (
     <div className="w-full p-4">
       <section
-        className="w-full bg-gray-60 p-20 rounded-lg mb-20 bg-cover bg-center"
+        className="w-full p-20 rounded-lg mb-20 bg-cover bg-center"
         style={{ backgroundImage: `url(${backgroundImage})` }}
       >
-        <div className="flex flex-col md:flex-row items-center">
-          <div className="flex flex-col mr-10 w-full md:w-1/2 mb-10 md:mb-0 text-left">
-            <h1 className="text-4xl mb-6">
+        <div className="flex flex-col md:flex-row items-center space-y-8 md:space-y-0 md:space-x-10">
+          <div className="flex flex-col w-full md:w-1/2 text-left space-y-6">
+            <h1 className="text-4xl font-bold text-black leading-tight">
               Build engineering <br /> teams that ship faster
             </h1>
-            <h4 className="text-xl mb-6 text-style-italic">
+            <h4 className="text-xl text-black opacity-80">
               In the fast-moving world of product companies, great products need
               great execution. Hiring the right engineers is vital but shouldn’t
               slow you down.
             </h4>
             <button
-              className="bg-blue-500 text-white font-bold py-2 px-4 rounded-md hover:bg-blue-700 transition duration-300 ease-in-out transform hover:scale-105 w-[30%]"
+              className="bg-blue-500 text-white font-semibold py-3 px-6 rounded-md hover:bg-blue-600 transition duration-300 ease-in-out transform hover:scale-105 w-[20%]"
               onClick={handleStart}
             >
               Start
             </button>
           </div>
-          <div className="w-full md:w-1/2 align-middle">
-            <img src={sampleImage} alt="heelooo" className="rounded-lg" />
+          <div className="w-full md:w-1/2">
+            <img
+              src={sampleImage}
+              alt="heelooo"
+              className="rounded-lg shadow-lg"
+            />
           </div>
         </div>
       </section>
 
       <section className="mb-10 mr-16 ml-16 p-40">
-        <h1 className="text-3xl font-bold mb-12">
-          Challenges Faced
-        </h1>
+        <h1 className="text-3xl font-bold mb-12">Challenges Faced</h1>
         <div className="flex flex-col md:flex-row mb-20 mt-20">
           <div className="flex flex-col mr-10 w-full md:w-1/2 mb-10 md:mb-0">
             <svg width="80" height="80" fill="none">
