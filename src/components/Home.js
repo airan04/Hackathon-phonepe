@@ -37,18 +37,14 @@ const Home = () => {
             </button>
           </div>
           <div className="w-full md:w-1/2 align-middle">
-            <img
-              src={sampleImage}
-              alt="heelooo"
-              className="rounded-lg"
-            />
+            <img src={sampleImage} alt="heelooo" className="rounded-lg" />
           </div>
         </div>
       </section>
 
       <section className="mb-10 mr-16 ml-16 p-40">
         <h1 className="text-3xl font-bold mb-12">
-          Challenges faced by Startups in tech hiring
+          Challenges Faced
         </h1>
         <div className="flex flex-col md:flex-row mb-20 mt-20">
           <div className="flex flex-col mr-10 w-full md:w-1/2 mb-10 md:mb-0">
@@ -62,9 +58,7 @@ const Home = () => {
               ></path>
             </svg>
             <h4 className="text-xl text-left mt-5">
-              Long hiring cycles leave key roles unfilled for weeks or months,
-              stalling progress. Startups need quicker, smarter hiring solutions
-              to stay ahead.
+              Time-consuming hiring processes
             </h4>
             <p className="text-gray-500 text-left text-sm">
               Long hiring cycles leave key roles unfilled for weeks or months,
@@ -83,14 +77,11 @@ const Home = () => {
               ></path>
             </svg>
             <h4 className="text-xl text-left mt-5">
-              Long hiring cycles leave key roles unfilled for weeks or months,
-              stalling progress. Startups need quicker, smarter hiring solutions
-              to stay ahead.
+              Limited engineering bandwidth
             </h4>
             <p className="text-gray-500 text-left text-sm">
-              Long hiring cycles leave key roles unfilled for weeks or months,
-              stalling progress. Startups need quicker, smarter hiring solutions
-              to stay ahead.
+              Relying on engineering teams for interviews takes them away from
+              building products and meeting deadlines.
             </p>
           </div>
         </div>
@@ -106,14 +97,11 @@ const Home = () => {
               ></path>
             </svg>
             <h4 className="text-xl text-left mt-5">
-              Long hiring cycles leave key roles unfilled for weeks or months,
-              stalling progress. Startups need quicker, smarter hiring solutions
-              to stay ahead.
+              Inconsistent interview standards
             </h4>
             <p className="text-gray-500 text-left text-sm">
-              Long hiring cycles leave key roles unfilled for weeks or months,
-              stalling progress. Startups need quicker, smarter hiring solutions
-              to stay ahead.
+              Without a structured interview process, startups may struggle with
+              inconsistent evaluations, leading to mismatches in hiring.
             </p>
           </div>
           <div className="flex flex-col w-full md:w-1/2">
@@ -127,14 +115,11 @@ const Home = () => {
               ></path>
             </svg>
             <h4 className="text-xl text-left mt-5">
-              Long hiring cycles leave key roles unfilled for weeks or months,
-              stalling progress. Startups need quicker, smarter hiring solutions
-              to stay ahead.
+              Lack of access to top talent
             </h4>
             <p className="text-gray-500 text-left text-sm">
-              Long hiring cycles leave key roles unfilled for weeks or months,
-              stalling progress. Startups need quicker, smarter hiring solutions
-              to stay ahead.
+              Competing with big companies for skilled professionals is tough.
+              Startups need efficient ways to attract top candidates.
             </p>
           </div>
         </div>
