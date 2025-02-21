@@ -34,13 +34,8 @@ const QuestionAll = () => {
   return (
     <div className="container mx-auto p-6">
       {loading ? (
-        <div className="flex justify-center items-center min-h-screen bg-gray-100">
-          <div className="bg-white p-8 rounded-lg shadow-lg text-center animate-pulse">
-            <h2 className="text-3xl font-semibold text-blue-500 mb-4">
-              Loading...
-            </h2>
-            <p className="text-lg">Please wait while we fetch the data.</p>
-          </div>
+        <div className="fixed inset-0 flex justify-center items-center bg-white bg-opacity-50 z-50">
+          <div className="w-16 h-16 border-t-4 border-blue-500 border-solid rounded-full animate-spin"></div>
         </div>
       ) : (
         <>
