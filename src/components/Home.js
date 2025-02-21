@@ -127,47 +127,50 @@ const Home = () => {
         </div>
       </section>
 
-      <section
-        className="bg-gray-100 p-10 rounded-lg shadow-md mb-20 bg-cover bg-center"
-        style={{ backgroundImage: `url(${backgroundImage2})` }}
-      >
-        <h1 className="text-3xl font-bold mb-8 text-center text-black">
-          How Intervue Empowers Top Startups
+      <section className="bg-white p-12 rounded-lg shadow-lg mb-20">
+        <h1 className="text-4xl font-semibold text-center text-gray-800 mb-12">
+          How It Empowers Hiring
         </h1>
-        <div className="grid grid-cols-1 gap-8">
-          <div className="bg-white-400 p-6 rounded-lg duration-300">
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+          {/* First Card */}
+          <div className="bg-gray-50 p-8 rounded-lg shadow-sm">
             <div className="flex flex-col md:flex-row items-center">
               <img
                 src={maxProd}
-                alt="heelooo"
-                className="rounded-lg shadow-md mb-6 md:mb-0 md:mr-6 w-full md:w-1/3"
+                alt="Productivity"
+                className="rounded-lg shadow-md mb-6 md:mb-0 md:mr-8 w-full md:w-2/5"
               />
-              <div className="flex flex-col w-full md:w-2/3">
-                <h3 className="text-xl font-semibold mb-4">
+              <div className="flex flex-col w-full md:w-3/5">
+                <h3 className="text-2xl font-semibold mb-4 text-gray-800">
                   Save Engineering Bandwidth, Maximize Productivity
                 </h3>
-                <p className="text-gray-700">
+                <p className="text-gray-600">
                   Your engineers are your most valuable resource. Don’t let
-                  interviews take up your time. With Intervue:
+                  interviews take up your time. With Intervue, you can automate
+                  the interview process and focus on what matters most.
                 </p>
               </div>
             </div>
           </div>
-          <div className="p-6 rounded-lg duration-300">
+
+          {/* Second Card */}
+          <div className="bg-gray-50 p-8 rounded-lg shadow-sm">
             <div className="flex flex-col md:flex-row items-center">
-              <div className="flex flex-col w-full md:w-2/3">
-                <h3 className="text-xl font-semibold mb-4">
-                  Save Engineering Bandwidth, Maximize Productivity
+              <div className="flex flex-col w-full md:w-3/5">
+                <h3 className="text-2xl font-semibold mb-4 text-gray-800">
+                  Streamline the Hiring Process, Reduce Time to Hire
                 </h3>
-                <p className="text-gray-700">
-                  Your engineers are your most valuable resource. Don’t let
-                  interviews take up your time. With Intervue:
+                <p className="text-gray-600">
+                  Time is money, especially in startups. Intervue helps
+                  streamline your hiring process so that you can bring in top
+                  talent faster without compromising quality.
                 </p>
               </div>
               <img
                 src={maxProd}
-                alt="heelooo"
-                className="rounded-lg shadow-md mb-6 md:mb-0 md:mr-6 w-full md:w-1/3"
+                alt="Hiring Process"
+                className="rounded-lg shadow-md mb-6 md:mb-0 md:ml-8 w-full md:w-2/5"
               />
             </div>
           </div>
