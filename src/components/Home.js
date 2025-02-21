@@ -12,6 +12,10 @@ const Home = () => {
     console.log("Start button clicked");
     navigate("/form");
   }
+  const codeSample = `
+    const greeting = "Hello, world!";
+    console.log(greeting);
+  `;
 
   return (
     <div className="w-full p-4">
@@ -22,7 +26,7 @@ const Home = () => {
         <div className="flex flex-col md:flex-row items-center space-y-8 md:space-y-0 md:space-x-10">
           <div className="flex flex-col w-full md:w-1/2 text-left space-y-6">
             <h1 className="text-4xl font-bold text-black leading-tight">
-              Build engineering <br /> teams that ship faster
+              Hire the right talent <br /> With the right set of questions
             </h1>
             <h4 className="text-xl text-black opacity-80">
               In the fast-moving world of product companies, great products need
@@ -30,7 +34,7 @@ const Home = () => {
               slow you down.
             </h4>
             <button
-              className="bg-blue-500 text-white font-semibold py-3 px-6 rounded-md hover:bg-blue-600 transition duration-300 ease-in-out transform hover:scale-105 w-[20%]"
+              className="btn-neutral bg-blue-500 text-white font-semibold py-3 px-6 rounded-md hover:bg-blue-600 transition duration-300 ease-in-out transform hover:scale-105 w-[20%]"
               onClick={handleStart}
             >
               Start

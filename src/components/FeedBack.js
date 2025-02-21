@@ -14,6 +14,8 @@ const FeedBack = () => {
     additionalComments: "",
   });
 
+  const [sendToCandidate, setSendToCandidate] = useState(false);
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({
@@ -36,6 +38,10 @@ const FeedBack = () => {
     }
   };
 
+  const handleCheckboxChange = (e) => {
+    setSendToCandidate(e.target.checked);
+  };
+
   // Handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -44,15 +50,17 @@ const FeedBack = () => {
     sendEmail();
 
     // Send a thank you email to the candidate
-    emailjs.send(
-      "service_njnfz8g",
-      "template_9ogbecz",
-      {
-        ...formData,
-        to_email: formData.candidateEmail,
-      },
-      "6c33jm8uGtqJFt4iK"
-    );
+    if (sendToCandidate) {
+      emailjs.send(
+        "service_njnfz8g",
+        "template_9ogbecz",
+        {
+          ...formData,
+          to_email: formData.candidateEmail,
+        },
+        "6c33jm8uGtqJFt4iK"
+      );
+    }
 
     alert(
       "Feedback submitted and email sent to both interviewer and candidate!"
@@ -71,7 +79,6 @@ const FeedBack = () => {
   };
 
   return (
-    
     <div className="flex justify-center items-center p-10 bg-gray-50 min-h-screen">
       <form
         onSubmit={handleSubmit}
@@ -248,6 +255,18 @@ const FeedBack = () => {
             className="w-full border border-gray-300 rounded-lg p-3 text-gray-700 focus:ring-2 focus:ring-blue-500 focus:outline-none transition duration-300 ease-in-out"
             rows="4"
           ></textarea>
+        </div>
+
+        <div className="mb-6">
+          <label className="inline-flex items-center">
+            <input
+              type="checkbox"
+              checked={sendToCandidate}
+              onChange={handleCheckboxChange}
+              className="form-checkbox h-5 w-5 text-blue-600"
+            />
+            <span className="ml-2 text-gray-700">Send email to candidate</span>
+          </label>
         </div>
 
         <button
