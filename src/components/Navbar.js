@@ -39,7 +39,7 @@ const Navbar = () => {
     //     </li>
     //   </ul>
     // </nav>
-    <nav className="bg-gradient-to-r from-violet-800 via-indigo-800 to-purple-800 p-4 rounded-b-lg shadow-lg">
+    <nav className="bg-gradient-to-r from-violet-800 via-indigo-800 to-purple-800 p-4 rounded-full shadow-lg mx-8 mt-3">
   <ul className="flex justify-center space-x-8">
     <li>
       <Link
